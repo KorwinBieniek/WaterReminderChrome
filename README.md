@@ -2,8 +2,10 @@
 
 A simple Chrome extension that helps you stay hydrated throughout the day by sending friendly reminders to drink water.
 
-![Popup Window](popup_screenshot.png)
-![Reminder Window](reminder_screenshot.png)
+<div style="display: flex; justify-content: space-between; margin: 20px 0;">
+    <img src="popup_screenshot.png" width="400" alt="Popup Window" style="margin-right: 10px;">
+    <img src="reminder_screenshot.png" width="400" alt="Reminder Window">
+</div>
 
 ## Features
 
