@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Przypominacz o Wodzie",
+  "version": "1.0",
+  "description": "Przypomina o regularnym piciu wody",
+  "permissions": [
+    "notifications",
+    "storage",
+    "alarms",
+    "windows",
+    "system.display"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_height": 650
+  }
+} 

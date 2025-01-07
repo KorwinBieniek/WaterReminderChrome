@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      height: 600px;
+      padding: 0;
+    }
+
+    .reminder-container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 300px;
+      margin: 20px;
+      max-height: calc(100% - 40px);
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      color: #0077cc;
+      margin-bottom: 20px;
+    }
+
+    .water-icon {
+      font-size: 48px;
+      margin: 20px 0;
+      color: #4facfe;
+    }
+
+    .water-amount-container {
+      margin: 20px 0;
+    }
+
+    .preset-amounts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .preset-button {
+      background: #e9ecef;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .preset-button:hover {
+      background: #dee2e6;
+    }
+
+    .preset-button.active {
+      background: #4facfe;
+      color: white;
+    }
+
+    .custom-amount {
+      margin-top: 15px;
+    }
+
+    .custom-amount input {
+      width: 100px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 0 10px;
+    }
+
+    button#confirmButton {
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    button#confirmButton:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+    .current-total {
+      margin-top: 20px;
+      color: #666;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="reminder-container">
+    <h2>Czas na wodę!</h2>
+    <div class="water-icon">💧</div>
+    
+    <div class="water-amount-container">
+      <h3>Ile wody wypiłeś?</h3>
+      <div class="preset-amounts">
+        <button class="preset-button" data-amount="150">150ml</button>
+        <button class="preset-button" data-amount="250">250ml</button>
+        <button class="preset-button" data-amount="330">330ml</button>
+        <button class="preset-button" data-amount="500">500ml</button>
+      </div>
+      <div class="custom-amount">
+        <label>Własna ilość:</label>
+        <input type="number" id="customAmount" min="50" step="50" value="250">
+        <span>ml</span>
+      </div>
+    </div>
+
+    <div class="current-total">
+      Dziś wypito: <span id="totalAmount">0</span>ml (<span id="totalLiters">0</span>L)
+    </div>
+
+    <button id="confirmButton">Potwierdzam wypicie</button>
+  </div>
+  <script src="reminder.js"></script>
+</body>
+</html> 
